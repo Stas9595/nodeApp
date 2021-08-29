@@ -5,7 +5,7 @@ const path = require('path')
 class Course {
 
     constructor(name, price, image) {
-        this.name = name,
+         this.name = name,
         this.price = price,
         this.image = image,
         this.id = uniqid()
