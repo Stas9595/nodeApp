@@ -1,5 +1,5 @@
 var express = require('express');
-var Course = require('../models/course')
+var Course = require('../models/course');
 var router = express.Router();
 
 /* GET home page. */

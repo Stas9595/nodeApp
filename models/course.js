@@ -2,6 +2,12 @@ var uniqid = require('uniqid')
 const fs = require('fs')
 const path = require('path')
 
+const p = path.join(
+    '../node-mongo',
+    'data',
+    'courses.json'
+)
+
 class Course {
 
     constructor(name, price, image) {
@@ -51,6 +57,32 @@ class Course {
                         resolve(JSON.parse(content))
                     }
 
+                }
+            )
+        })
+    }
+
+    static async getByID(id) {
+        const courses = await Course.getAll();
+        return courses.find(c => c.id == id)
+
+    }
+
+    static async update(course) {
+        const courses = await Course.getAll();
+        const idx = courses.findIndex(c => c.id == course.id)
+        courses[idx] = course
+
+        return new Promise((resolve, reject) => {
+            fs.writeFile(
+                p,
+                JSON.stringify(courses),
+                (err) => {
+                    if (err) {
+                        reject(err)
+                    } else {
+                        resolve()
+                    }
                 }
             )
         })
