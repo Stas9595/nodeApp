@@ -23,8 +23,20 @@ class Course {
     async save() {
         const courses = await Course.getAll();
         courses.push(this.toJSON())
-
-        console.log('Courses', courses)
+        console.log(courses);
+        return new Promise((resolve, reject) => {
+            fs.writeFile(
+                path.join(__dirname, '..', 'data', 'courses.json'),
+                JSON.stringify(courses),
+                (err) => {
+                    if (err) {
+                        reject(err)
+                    } else {
+                        resolve()
+                    }
+                }
+            )
+        })
     }
 
     static getAll() {
