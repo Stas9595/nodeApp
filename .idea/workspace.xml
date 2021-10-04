@@ -16,7 +16,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e71c54f6-e21f-4765-ad72-b801602fac30" name="Default Changelist" comment="first normal commit2" />
+    <list default="true" id="e71c54f6-e21f-4765-ad72-b801602fac30" name="Default Changelist" comment="first normal commit2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,11 +43,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.20.14" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dfw" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Node.js.add.js">
     <configuration name="add.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/routes/add.js" working-dir="$PROJECT_DIR$/routes">
@@ -75,6 +78,8 @@
       <workItem from="1630001621996" duration="5458000" />
       <workItem from="1630007158358" duration="2132000" />
       <workItem from="1630263864661" duration="5064000" />
+      <workItem from="1630337679801" duration="1511000" />
+      <workItem from="1630406354868" duration="1626000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1630002843849</created>
@@ -193,11 +198,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="629" y="298" key="EditFileWatcherDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1629208003770" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1630271504334">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2660" y="275" key="FileChooserDialogImpl" timestamp="1630396779765">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1630271504334" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1624390359499" />
+    <state x="2660" y="275" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1630396779765" />
     <state width="1899" height="348" key="GridCell.Tab.0.bottom" timestamp="1629227656273">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
