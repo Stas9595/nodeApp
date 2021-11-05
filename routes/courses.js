@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-    const courses = await Course.getAll()
+    const courses = await Course.find()
     res.render('courses', {
         title: 'Courses',
         isCourses: true,
@@ -16,7 +16,7 @@ router.get('/:id/edit', async function (req, res) {
     if (!req.query.allow) {
         return res.redirect('/')
     }
-    const course = await Course.getByID(req.params.id)
+    const course = await Course.findById(req.params.id)
     res.render('course-edit', {
         title: `Edit ${course.title}`,
         course
@@ -24,12 +24,14 @@ router.get('/:id/edit', async function (req, res) {
 });
 
 router.post('/edit', async (req, res) => {
-    await Course.update(req.body)
+    const {id} = req.body
+    delete req.body.id
+    await Course.findByIdAndUpdate(id, req.body)
     res.redirect('/courses')
 })
 
 router.get('/:id', async function (req, res) {
-    const course = await Course.getByID(req.params.id)
+    const course = await Course.findById(req.params.id)
     res.render('course', {
         layout: 'empty',
         title: `Course ${course.title}`,

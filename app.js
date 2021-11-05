@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var exphbr = require('express-handlebars');
 var logger = require('morgan');
+var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var addRouter = require('./routes/add');
@@ -11,6 +12,8 @@ var coursesRouter = require('./routes/courses');
 var cardRouter = require('./routes/card');
 
 var app = express();
+
+const url = `mongodb+srv://Stasg:eyblbajd@cluster0.are8a.mongodb.net/shop?retryWrites=true&w=majority`;
 
 var hbs = exphbr.create({
   defaultLayout: 'main',
@@ -49,5 +52,15 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+async function start() {
+  try {
+    await mongoose.connect(url, {useNewUrlParser: true})
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+start()
 
 module.exports = app;

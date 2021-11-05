@@ -11,12 +11,20 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', async function (req, res) {
-    debugger;
-    console.log(req.body);
-    var course = new Course(req.body.name, req.body.price, req.body.image)
-    await course.save();
 
-    res.redirect('/courses');
+    //var course = new Course(req.body.name, req.body.price, req.body.image)
+    const course = new Course({
+        title: req.body.name,
+        price: req.body.price,
+        img: req.body.image
+    })
+
+    try{
+        await course.save();
+        res.redirect('/courses');
+    } catch (e) {
+        console.log(e)
+    }
     console.log(req.name);
 });
 
