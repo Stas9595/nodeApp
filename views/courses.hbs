@@ -6,17 +6,17 @@
             <div class="col s6 offset-s3">
                 <div class="card">
                     <div class="card-image">
-                        <img src="{{img}}" alt="{{title}}">
+                        <img src="{{_doc.img}}" alt="{{_doc.title}}">
                     </div>
                     <div class="card-content">
-                        <span class="card-title">{{title}}</span>
-                        <p class="price">{{price}}</p>
+                        <span class="card-title">{{_doc.title}}</span>
+                        <p class="price">{{_doc.price}}</p>
                     </div>
                     <div class="card-action actions">
-                        <a href="/courses/{{id}}" target="_blank">Open course</a>
-                        <a href="/courses/{{id}}/edit?allow=true" target="_blank">Edit</a>
+                        <a href="/courses/{{_doc._id}}" target="_blank">Open course</a>
+                        <a href="/courses/{{_doc._id}}/edit?allow=true" target="_blank">Edit</a>
                         <form action="/card/add" method="post">
-                            <input type="hidden" name="id" value="{{id}}">
+                            <input type="hidden" name="id" value="{{_doc.id}}">
                             <button class="btn btn-primary" type="submit">Buy</button>
                         </form>
                     </div>

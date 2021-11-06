@@ -10,6 +10,7 @@ router.get('/', async function(req, res, next) {
         isCourses: true,
         courses
     });
+    const t = 'test';
 });
 
 router.get('/:id/edit', async function (req, res) {
