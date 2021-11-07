@@ -10,6 +10,7 @@ var indexRouter = require('./routes/index');
 var addRouter = require('./routes/add');
 var coursesRouter = require('./routes/courses');
 var cardRouter = require('./routes/card');
+var User = require('./models/user');
 
 var app = express();
 
@@ -25,6 +26,16 @@ var hbs = exphbr.create({
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
+
+app.use(async (req, res, next) => {
+  try {
+    const user = await User.findById('61882fddb2c2e0c2be0eeb24')
+    req.user = user
+    next()
+  } catch (e) {
+    console.log(e)
+  }
+})
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -55,7 +66,20 @@ app.use(function(err, req, res, next) {
 
 async function start() {
   try {
-    await mongoose.connect(url, {useNewUrlParser: true})
+    await mongoose.connect(url, {
+      useNewUrlParser: true
+    })
+    const candidate = await User.findOne()
+    if (!candidate) {
+      const user = new User({
+        email: 'stas.grigorevskiy@gmail.com',
+        name: 'Stas',
+        cart: {
+          items: []
+        }
+      })
+      await user.save()
+    }
   } catch (e) {
     console.log(e)
   }
