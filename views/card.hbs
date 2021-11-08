@@ -12,7 +12,7 @@
         <tbody>
             {{#each courses}}
             <tr>
-                <td>{{name}}</td>
+                <td>{{title}}</td>
                 <td>{{count}}</td>
                 <td>
                     <button class="btn btn-small js-remove" data-id="{{id}}">Delete</button>
@@ -23,6 +23,10 @@
     </table>
 
     <p><strong>Price:</strong> <span class="price">{{price}}</span></p>
+
+    <form action="/orders" method="post">
+        <button type="submit" class="btn">Create an order</button>
+    </form>
 {{else}}
     <p>Basket is empty</p>
 {{/if}}

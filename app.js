@@ -5,12 +5,15 @@ var cookieParser = require('cookie-parser');
 var exphbr = require('express-handlebars');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var Handlebars = require('handlebars')
 
 var indexRouter = require('./routes/index');
 var addRouter = require('./routes/add');
 var coursesRouter = require('./routes/courses');
 var cardRouter = require('./routes/card');
 var User = require('./models/user');
+var ordersRoutes = require('./routes/orders');
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 
 var app = express();
 
@@ -19,7 +22,8 @@ const url = `mongodb+srv://Stasg:eyblbajd@cluster0.are8a.mongodb.net/shop?retryW
 var hbs = exphbr.create({
   defaultLayout: 'main',
   extname: 'hbs',
-  layoutsDir: 'views/layouts'
+  layoutsDir: 'views/layouts',
+  handlebars: allowInsecurePrototypeAccess(Handlebars)
 });
 
 // view engine setup
@@ -47,6 +51,7 @@ app.use('/', indexRouter);
 app.use('/add', addRouter);
 app.use('/courses', coursesRouter);
 app.use('/card', cardRouter);
+app.use('/orders', ordersRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
