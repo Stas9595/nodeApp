@@ -13,6 +13,7 @@ var coursesRouter = require('./routes/courses');
 var cardRouter = require('./routes/card');
 var User = require('./models/user');
 var ordersRoutes = require('./routes/orders');
+var authRoutes = require('./routes/auth');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 
 var app = express();
@@ -52,6 +53,7 @@ app.use('/add', addRouter);
 app.use('/courses', coursesRouter);
 app.use('/card', cardRouter);
 app.use('/orders', ordersRoutes);
+app.use('/auth', authRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
