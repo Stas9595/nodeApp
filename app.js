@@ -1,12 +1,17 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+var session = require('express-session');
+var MongoStore = require('connect-mongodb-session')(session)
 var cookieParser = require('cookie-parser');
 var exphbr = require('express-handlebars');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-var Handlebars = require('handlebars')
+var Handlebars = require('handlebars');
+var varMiddleware = require('./middleware/variables');
+var userMiddleware = require('./middleware/user')
 
+//routes
 var indexRouter = require('./routes/index');
 var addRouter = require('./routes/add');
 var coursesRouter = require('./routes/courses');
@@ -16,9 +21,9 @@ var ordersRoutes = require('./routes/orders');
 var authRoutes = require('./routes/auth');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 
-var app = express();
+var url = `mongodb+srv://Stasg:eyblbajd@cluster0.are8a.mongodb.net/shop?retryWrites=true&w=majority`;
 
-const url = `mongodb+srv://Stasg:eyblbajd@cluster0.are8a.mongodb.net/shop?retryWrites=true&w=majority`;
+var app = express();
 
 var hbs = exphbr.create({
   defaultLayout: 'main',
@@ -27,26 +32,30 @@ var hbs = exphbr.create({
   handlebars: allowInsecurePrototypeAccess(Handlebars)
 });
 
-// view engine setup
-app.engine('hbs', hbs.engine);
-app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'views'));
-
-app.use(async (req, res, next) => {
-  try {
-    const user = await User.findById('61882fddb2c2e0c2be0eeb24')
-    req.user = user
-    next()
-  } catch (e) {
-    console.log(e)
-  }
-})
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+const store = new MongoStore({
+  collection: 'sessions',
+  uri: url
+})
+
+// view engine setup
+app.engine('hbs', hbs.engine);
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: 'somestring',
+  resave: false,
+  saveUninitialized: false,
+  store
+}))
+
+app.use(varMiddleware)
+app.use(userMiddleware)
 
 app.use('/', indexRouter);
 app.use('/add', addRouter);
@@ -73,20 +82,10 @@ app.use(function(err, req, res, next) {
 
 async function start() {
   try {
-    await mongoose.connect(url, {
-      useNewUrlParser: true
+    await mongoose.connect(url,  {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
     })
-    const candidate = await User.findOne()
-    if (!candidate) {
-      const user = new User({
-        email: 'stas.grigorevskiy@gmail.com',
-        name: 'Stas',
-        cart: {
-          items: []
-        }
-      })
-      await user.save()
-    }
   } catch (e) {
     console.log(e)
   }

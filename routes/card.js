@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Course = require('../models/course');
+var auth = require('../middleware/auth')
 
 function mapCartItems(cart) {
     return cart.items.map(c => ({
@@ -16,13 +17,13 @@ function computePrice(courses) {
     }, 0)
 }
 
-router.post('/add', async (req, res) => {
+router.post('/add', auth, async (req, res) => {
     const course = await Course.findById(req.body.id);
     await req.user.addToCart(course)
     res.redirect('/card');
 });
 
-router.delete('/remove/:id', async function (req, res) {
+router.delete('/remove/:id', auth, async function (req, res) {
     await req.user.removeFromCart(req.params.id)
     const user = await req.user.populate('cart.items.courseId')
 
@@ -33,7 +34,7 @@ router.delete('/remove/:id', async function (req, res) {
     res.status(200).json(cart)
 })
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
     const user = await req.user.populate({
         path: 'cart.items.courseId'
     })
