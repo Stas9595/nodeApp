@@ -1,3 +1,5 @@
+import * as JsSearch from './node_modules/sweetalert2';
+
 const toCurrency = price => {
     return new Intl.NumberFormat('en-US', {
         currency: 'EUR',
@@ -25,6 +27,8 @@ document.querySelectorAll('.price').forEach((node) => {
         style: 'currency'
     }).format(node.textContent);
 })
+
+
 
 const $card = document.querySelector('#card')
 if ($card) {
@@ -54,6 +58,19 @@ if ($card) {
                         $card.innerHTML = '<p>Basket is empty</p>'
                     }
                 })
+        }
+    })
+}
+
+const $courses = document.querySelector('#courses')
+if ($courses) {
+    $courses.addEventListener('click', event => {
+        if (event.target.classList.contains('btn-primary')) {
+            JsSearch.fire(
+                'Good job!',
+                'You clicked the button!',
+                'success'
+            )
         }
     })
 }
