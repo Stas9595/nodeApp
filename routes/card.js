@@ -20,7 +20,7 @@ function computePrice(courses) {
 router.post('/add', auth, async (req, res) => {
     const course = await Course.findById(req.body.id);
     await req.user.addToCart(course)
-    //res.redirect('/card');
+    res.redirect('/card');
 });
 
 router.delete('/remove/:id', auth, async function (req, res) {
@@ -29,7 +29,8 @@ router.delete('/remove/:id', auth, async function (req, res) {
 
     const courses = mapCartItems(user.cart)
     const cart = {
-        courses, price: computePrice(courses)
+        courses,
+        price: computePrice(courses)
     }
     res.status(200).json(cart)
 })

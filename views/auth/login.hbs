@@ -21,6 +21,8 @@
                     <span class="helper-text" data-error="Enter Password"></span>
                 </div>
 
+                <input type="hidden" name="_csrf" value="{{csrf}}">
+
                 <button class="btn btn-primary" type="submit">Log in</button>
             </form>
         </div>
@@ -34,16 +36,24 @@
                 </div>
 
                 <div class="input-field">
-                    <input id="rpassword" name="password" type="password" class="validate" required min="1">
+                    <input id="rpassword" name="password" type="password" class="validate" required>
                     <label for="rpassword">Password</label>
                     <span class="helper-text" data-error="Enter Password"></span>
                 </div>
 
                 <div class="input-field">
-                    <input id="rpassword" name="password" type="password" class="validate" required min="1">
-                    <label for="rpassword">Enter password second time</label>
+                    <input id="confirm" name="confirm" type="password" class="validate" required>
+                    <label for="confirm">Enter password second time</label>
                     <span class="helper-text" data-error="Enter password second time"></span>
                 </div>
+
+                <div class="input-field">
+                    <input id="name" name="name" type="text" class="validate" required>
+                    <label for="name">Enter name</label>
+                    <span class="helper-text" data-error="Enter name"></span>
+                </div>
+
+                <input type="hidden" name="_csrf" value="{{csrf}}">
 
                 <button class="btn btn-primary" type="submit">Register</button>
             </form>

@@ -1,4 +1,4 @@
-import * as JsSearch from './node_modules/sweetalert2';
+//import * as JsSearch from './node_modules/sweetalert2';
 
 const toCurrency = price => {
     return new Intl.NumberFormat('en-US', {
@@ -35,9 +35,13 @@ if ($card) {
     $card.addEventListener('click', event => {
         if (event.target.classList.contains('js-remove')) {
             const id = event.target.dataset.id
+            const csrf = event.target.dataset.csrf
 
             fetch('/card/remove/' + id, {
-                method: 'delete'
+                method: 'delete',
+                headers: {
+                    'X-XSRF-TOKEN': csrf
+                }
             }).then(res => res.json())
                 .then(card => {
                     if(card.courses.length) {
@@ -62,7 +66,7 @@ if ($card) {
     })
 }
 
-const $courses = document.querySelector('#courses')
+/*const $courses = document.querySelector('#courses')
 if ($courses) {
     $courses.addEventListener('click', event => {
         if (event.target.classList.contains('btn-primary')) {
@@ -73,6 +77,6 @@ if ($courses) {
             )
         }
     })
-}
+}*/
 
 M.Tabs.init(document.querySelectorAll('.tabs'))

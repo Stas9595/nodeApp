@@ -1,6 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+var csrf = require('csurf');
 var session = require('express-session');
 var MongoStore = require('connect-mongodb-session')(session)
 var cookieParser = require('cookie-parser');
@@ -9,14 +10,14 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 var Handlebars = require('handlebars');
 var varMiddleware = require('./middleware/variables');
-var userMiddleware = require('./middleware/user')
+var userMiddleware = require('./middleware/user');
+var User = require('./models/user');
 
 //routes
 var indexRouter = require('./routes/index');
 var addRouter = require('./routes/add');
 var coursesRouter = require('./routes/courses');
 var cardRouter = require('./routes/card');
-var User = require('./models/user');
 var ordersRoutes = require('./routes/orders');
 var authRoutes = require('./routes/auth');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
@@ -54,6 +55,7 @@ app.use(session({
   store
 }))
 
+app.use(csrf())
 app.use(varMiddleware)
 app.use(userMiddleware)
 
