@@ -11,7 +11,7 @@ var mongoose = require('mongoose');
 var Handlebars = require('handlebars');
 var varMiddleware = require('./middleware/variables');
 var userMiddleware = require('./middleware/user');
-var User = require('./models/user');
+var flash = require('connect-flash');
 
 //routes
 var indexRouter = require('./routes/index');
@@ -56,6 +56,7 @@ app.use(session({
 }))
 
 app.use(csrf())
+app.use(flash())
 app.use(varMiddleware)
 app.use(userMiddleware)
 
