@@ -12,6 +12,7 @@ var Handlebars = require('handlebars');
 var varMiddleware = require('./middleware/variables');
 var userMiddleware = require('./middleware/user');
 var flash = require('connect-flash');
+var keys = require('./keys');
 
 //routes
 var indexRouter = require('./routes/index');
@@ -21,8 +22,6 @@ var cardRouter = require('./routes/card');
 var ordersRoutes = require('./routes/orders');
 var authRoutes = require('./routes/auth');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
-
-var url = `mongodb+srv://Stasg:eyblbajd@cluster0.are8a.mongodb.net/shop?retryWrites=true&w=majority`;
 
 var app = express();
 
@@ -40,7 +39,7 @@ app.use(cookieParser());
 
 const store = new MongoStore({
   collection: 'sessions',
-  uri: url
+  uri: keys.MONGO_URI
 })
 
 // view engine setup
@@ -49,7 +48,7 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-  secret: 'somestring',
+  secret: keys.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
   store
@@ -85,7 +84,7 @@ app.use(function(err, req, res, next) {
 
 async function start() {
   try {
-    await mongoose.connect(url,  {
+    await mongoose.connect(keys.MONGO_URI,  {
       useNewUrlParser: true,
       useUnifiedTopology: true
     })
