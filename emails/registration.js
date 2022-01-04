@@ -5,6 +5,7 @@ module.exports = function (email) {
         to: email,
         from: keys.EMAIL_FROM,
         subject: 'Account was created',
+        replyto: keys.EMAIL_FROM,
         html: `
             <h1>Welcome to my test NodeJS application</h1>
             <p>Your account was successfully created - ${email}</p>

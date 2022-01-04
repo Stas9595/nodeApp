@@ -16,11 +16,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e71c54f6-e21f-4765-ad72-b801602fac30" name="Default Changelist" comment="finalize auth">
-      <change afterPath="$PROJECT_DIR$/emails/registration.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keys/index.js" afterDir="false" />
+    <list default="true" id="e71c54f6-e21f-4765-ad72-b801602fac30" name="Default Changelist" comment="configure email service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emails/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/emails/registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keys/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/keys/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
@@ -62,6 +62,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="XML" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.20.37" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -124,7 +125,11 @@
       <workItem from="1638370320609" duration="3505000" />
       <workItem from="1639038865152" duration="601000" />
       <workItem from="1640449449975" duration="5554000" />
-      <workItem from="1640609968989" duration="6249000" />
+      <workItem from="1640609968989" duration="6883000" />
+      <workItem from="1640769332519" duration="598000" />
+      <workItem from="1640806743624" duration="716000" />
+      <workItem from="1640868399456" duration="790000" />
+      <workItem from="1641305504984" duration="2441000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1630002843849</created>
@@ -273,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640611740509</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="configure email service">
+      <created>1640636801588</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1640636801588</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,7 +330,8 @@
     <MESSAGE value="login page" />
     <MESSAGE value="auth logic + csrf" />
     <MESSAGE value="finalize auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalize auth" />
+    <MESSAGE value="configure email service" />
+    <option name="LAST_COMMIT_MESSAGE" value="configure email service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -336,19 +349,16 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/javascripts/app.js</url>
           <line>38</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/auth.js</url>
-          <line>75</line>
-          <properties lambdaOrdinal="-1" />
+          <line>72</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/auth.js</url>
-          <line>13</line>
-          <properties lambdaOrdinal="-1" />
+          <line>10</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
