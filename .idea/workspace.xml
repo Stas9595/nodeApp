@@ -17,13 +17,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e71c54f6-e21f-4765-ad72-b801602fac30" name="Default Changelist" comment="configure email service">
+      <change afterPath="$PROJECT_DIR$/views/auth/reset.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emails/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/emails/registration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keys/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/keys/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/auth/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/auth/login.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/error.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/error.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +80,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Node.js.DEBUG" />
       <item itemvalue="Node.js.Debug" />
       <item itemvalue="Node.js.add.js" />
     </list>
@@ -360,6 +359,18 @@
           <url>file://$PROJECT_DIR$/routes/auth.js</url>
           <line>10</line>
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/routes/auth.js</url>
+          <line>59</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/routes/auth.js</url>
+          <line>19</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
