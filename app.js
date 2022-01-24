@@ -29,7 +29,8 @@ var hbs = exphbr.create({
   defaultLayout: 'main',
   extname: 'hbs',
   layoutsDir: 'views/layouts',
-  handlebars: allowInsecurePrototypeAccess(Handlebars)
+  handlebars: allowInsecurePrototypeAccess(Handlebars),
+  helpers: require('./utils/hbs-helpers')
 });
 
 app.use(logger('dev'));

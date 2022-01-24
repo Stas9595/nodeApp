@@ -11,11 +11,16 @@
                     <div class="card-content">
                         <span class="card-title">{{_doc.title}}</span>
                         <p class="price">{{_doc.price}}</p>
+
                     </div>
                     <div class="card-action actions">
                         <a href="/courses/{{_doc._id}}" target="_blank">Open course</a>
                         {{#if @root.isAuth}}
+
+                            {{#ifEquals userId._id @root.userId}}
                             <a href="/courses/{{_doc._id}}/edit?allow=true" target="_blank">Edit</a>
+                            {{/ifEquals}}
+
                             <form action="/card/add" method="post">
                                 <input type="hidden" name="id" value="{{_doc._id}}">
                                 <input type="hidden" name="_csrf" value="{{@root.csrf}}">
