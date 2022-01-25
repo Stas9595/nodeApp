@@ -20,13 +20,12 @@ router.post('/', auth, async function (req, res) {
         userId: req.user._id
     })
 
-    try{
+    try {
         await course.save();
         res.redirect('/courses');
     } catch (e) {
         console.log(e)
     }
-    console.log(req.name);
 });
 
 module.exports = router;

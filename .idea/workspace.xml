@@ -16,20 +16,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e71c54f6-e21f-4765-ad72-b801602fac30" name="Default Changelist" comment="fix email sending">
-      <change afterPath="$PROJECT_DIR$/emails/reset.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/hbs-helpers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/validators.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/auth/password.hbs" afterDir="false" />
+    <list default="true" id="e71c54f6-e21f-4765-ad72-b801602fac30" name="Default Changelist" comment="reset password, validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/courses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/auth/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/auth/login.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/courses.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/courses.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/add.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +127,8 @@
       <workItem from="1641305504984" duration="2441000" />
       <workItem from="1642089036236" duration="982000" />
       <workItem from="1642860823812" duration="144000" />
-      <workItem from="1643044768038" duration="7022000" />
+      <workItem from="1643044768038" duration="8057000" />
+      <workItem from="1643143453889" duration="845000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1630002843849</created>
@@ -301,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642088648554</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="reset password, validation">
+      <created>1643053495194</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1643053495194</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +345,8 @@
     <MESSAGE value="finalize auth" />
     <MESSAGE value="configure email service" />
     <MESSAGE value="reset password" />
-    <option name="LAST_COMMIT_MESSAGE" value="reset password" />
+    <MESSAGE value="reset password, validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="reset password, validation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -376,19 +374,16 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/auth.js</url>
           <line>129</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/auth.js</url>
           <line>96</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/courses.js</url>
           <line>36</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
