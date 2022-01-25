@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var csrf = require('csurf');
 var session = require('express-session');
+var helmet = require('helmet')
 var MongoStore = require('connect-mongodb-session')(session)
 var cookieParser = require('cookie-parser');
 var exphbr = require('express-handlebars');
